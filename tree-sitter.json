@@ -1,35 +1,43 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
   "grammars": [
     {
       "name": "jinja2",
       "camelcase": "Jinja2",
-      "scope": "source.jija2",
-      "path": ".",
+      "title": "Jinja2",
+      "scope": "source.jinja2",
       "file-types": [
-        "jinja",
-        "jinja2"
-      ]
+        "jinja2",
+        "jinja"
+      ],
+      "injection-regex": "^jinja2$",
+      "class-name": "TreeSitterJinja2"
     }
   ],
   "metadata": {
-    "version": "0.0.9",
-    "license": "GPL-3.0-or-later",
-    "description": "Tree-sitter grammar for Jinja2 templates",
+    "version": "0.0.14",
+    "license": "MIT",
+    "description": "Jinja2 grammar for tree-sitter",
     "authors": [
       {
-        "name": "Stephan Seitz"
+        "name": "Uros Mrkobrada",
+        "email": "uros.mrkobrada@gmail.com",
+        "url": ""
       }
     ],
     "links": {
-      "repository": "git://github.com/theHamsta/tree-sitter-jinja2.git"
+      "repository": "https://github.com/uros-5/tree-sitter-jinja2",
+      "funding": ""
     }
   },
   "bindings": {
     "c": true,
     "go": true,
+    "java": true,
     "node": true,
     "python": true,
     "rust": true,
-    "swift": true
+    "swift": true,
+    "zig": true
   }
 }

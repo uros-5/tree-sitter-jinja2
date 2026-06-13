@@ -1,12 +1,15 @@
 [package]
 name = "tree-sitter-jinja2"
-description = "jinja2 grammar for the tree-sitter parsing library"
-version = "0.0.13"
-keywords = ["incremental", "parsing", "jinja2"]
-categories = ["parsing", "text-editors"]
+description = "Jinja2 grammar for tree-sitter"
+version = "0.0.14"
+authors = ["Uros Mrkobrada <uros.mrkobrada@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+keywords = ["incremental", "parsing", "tree-sitter", "jinja2"]
+categories = ["parser-implementations", "parsing", "text-editors"]
 repository = "https://github.com/uros-5/tree-sitter-jinja2"
 edition = "2021"
-license = "MIT"
+autoexamples = false
 
 build = "bindings/rust/build.rs"
 include = [
@@ -14,13 +17,18 @@ include = [
   "grammar.js",
   "queries/*",
   "src/*",
+  "tree-sitter.json",
+  "/LICENSE",
 ]
 
 [lib]
 path = "bindings/rust/lib.rs"
 
 [dependencies]
-tree-sitter-language = "^0.1"
+tree-sitter-language = "0.1"
 
 [build-dependencies]
-cc = "1.0"
+cc = "1.2"
+
+[dev-dependencies]
+tree-sitter = "0.26.9"

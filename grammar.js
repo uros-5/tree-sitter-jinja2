@@ -1,27 +1,13 @@
-/*
- * grammar.js
- * Copyright (C) 2020 Stephan Seitz <stephan.seitz@fau.de>
- *
- * Distributed under terms of the GPLv3 license.
+/**
+ * @file Jinja2 grammar for tree-sitter
+ * @author Uros Mrkobrada <uros.mrkobrada@gmail.com>
+ * @license MIT
  */
 
+/// <reference types="tree-sitter-cli/dsl" />
+// @ts-check
 
-
-    //{% ... %} for Statements
-
-    //{{ ... }} for Expressions to print to the template output
-
-    //{# ... #} for Comments not included in the template output
-
-//valid:
-
-//{%- if foo -%}...{% endif %}
-
-//invalid:
-
-//{% - if foo - %}...{% endif %}
-
-module.exports = grammar ({
+export default grammar({
   name: 'jinja2',
 
   word: $ => $.identifier,
@@ -61,4 +47,4 @@ module.exports = grammar ({
     operator: $ => /[^\w_{#%}'"]+/,
     string: $ => /['"][^'"]*['"]/,
   }
-});
+}) ;

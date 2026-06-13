@@ -1,9 +1,15 @@
 # tree-sitter-jinja2
 
-Really basic parser for really basic highlighting.
+## Build
 
 ```bash
-npm install
-tree-sitter generate && tree-sitter parse example-file.jinja2
+npx --package tree-sitter-cli@0.24.7 tree-sitter generate
+tree-sitter generate
+tree-sitter build
+tree-sitter build --wasm
 ```
+## Playground
 
+```bash
+tree-sitter playground
+```

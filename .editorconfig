@@ -2,23 +2,24 @@ root = true
 
 [*]
 charset = utf-8
-end_of_line = lf
-insert_final_newline = true
-trim_trailing_whitespace = true
 
-[*.{json,toml,yml,gyp}]
+[*.{json,toml,yml,gyp,xml}]
 indent_style = space
 indent_size = 2
 
-[*.js]
+[*.{js,ts}]
 indent_style = space
 indent_size = 2
 
-[*.rs]
+[*.scm]
+indent_style = space
+indent_size = 2
+
+[*.{c,cc,h}]
 indent_style = space
 indent_size = 4
 
-[*.{c,cc,h}]
+[*.rs]
 indent_style = space
 indent_size = 4
 
@@ -30,6 +31,10 @@ indent_size = 4
 indent_style = space
 indent_size = 4
 
+[*.java]
+indent_style = space
+indent_size = 4
+
 [*.go]
 indent_style = tab
 indent_size = 8
@@ -37,3 +42,9 @@ indent_size = 8
 [Makefile]
 indent_style = tab
 indent_size = 8
+
+[parser.c]
+indent_size = 2
+
+[{alloc,array,parser}.h]
+indent_size = 2
