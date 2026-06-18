@@ -28,9 +28,9 @@ export default grammar({
     expression_begin: $ => '{{',
     expression_end: $ => '}}',
 
-    object: $ => seq($._object_begin, optional(seq($._inner_text2)), $._object_end),
-    _object_begin: $ => '{',
-    _object_end: $ => '}',
+    map: $ => seq($._map_begin, optional(seq($._inner_text2)), $._map_end),
+    _map_begin: $ => '{',
+    _map_end: $ => '}',
    
     comment: $ => seq('{#', /[^#]*/, '#}'),
 
@@ -38,11 +38,11 @@ export default grammar({
     white_space_control: $ => /[-+]/,
     _white_space: $ => /\s+/,
 
-    _inner_text: $ => repeat1(choice($.keyword, field('identifier', $.identifier), $._white_space, $.operator, $.string, $.object)),
-    _inner_text2: $ => repeat1(choice(field('identifier', $.identifier), $._white_space, $.operator, $.string, $.object)),
-    // _inner_text3: $ => repeat1(choice(field('identifier', $.identifier), $._)),
+    _inner_text: $ => repeat1(choice($.keyword, field('identifier', $.dotted_identifier), field('identifier', $.identifier), $._white_space, $.operator, $.string, $.map)),
+    _inner_text2: $ => repeat1(choice(field('identifier', $.dotted_identifier), field('identifier', $.identifier), $._white_space, $.operator, $.string, $.map)),
 
 
+    dotted_identifier: $ => seq(field('attribute', $.identifier), repeat1(seq('.', field('attribute', $.identifier)))),
     identifier: $ => /[\w_]+/,
     operator: $ => /[^\w_{#%}'"]+/,
     string: $ => /['"][^'"]*['"]/,

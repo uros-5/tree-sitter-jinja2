@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-jinja2",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Jinja2 grammar for tree-sitter",
   "type": "module",
   "repository": {

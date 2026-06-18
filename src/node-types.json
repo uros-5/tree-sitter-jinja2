@@ -5,6 +5,22 @@
     "fields": {}
   },
   {
+    "type": "dotted_identifier",
+    "named": true,
+    "fields": {
+      "attribute": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "expression",
     "named": true,
     "fields": {
@@ -12,6 +28,10 @@
         "multiple": true,
         "required": false,
         "types": [
+          {
+            "type": "dotted_identifier",
+            "named": true
+          },
           {
             "type": "identifier",
             "named": true
@@ -32,7 +52,7 @@
           "named": true
         },
         {
-          "type": "object",
+          "type": "map",
           "named": true
         },
         {
@@ -52,13 +72,17 @@
     "fields": {}
   },
   {
-    "type": "object",
+    "type": "map",
     "named": true,
     "fields": {
       "identifier": {
         "multiple": true,
         "required": false,
         "types": [
+          {
+            "type": "dotted_identifier",
+            "named": true
+          },
           {
             "type": "identifier",
             "named": true
@@ -71,7 +95,7 @@
       "required": false,
       "types": [
         {
-          "type": "object",
+          "type": "map",
           "named": true
         },
         {
@@ -118,6 +142,10 @@
         "required": false,
         "types": [
           {
+            "type": "dotted_identifier",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           }
@@ -133,7 +161,7 @@
           "named": true
         },
         {
-          "type": "object",
+          "type": "map",
           "named": true
         },
         {
@@ -191,6 +219,10 @@
   },
   {
     "type": "%}",
+    "named": false
+  },
+  {
+    "type": ".",
     "named": false
   },
   {
