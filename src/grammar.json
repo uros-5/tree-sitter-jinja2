@@ -95,46 +95,12 @@
       ]
     },
     "statement_begin": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "{%"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "white_space_control"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
+      "type": "PATTERN",
+      "value": "\\{%[-+]?"
     },
     "statement_end": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "white_space_control"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "STRING",
-          "value": "%}"
-        }
-      ]
+      "type": "PATTERN",
+      "value": "[-+]?%\\}"
     },
     "expression": {
       "type": "SEQ",
@@ -369,10 +335,6 @@
         }
       ]
     },
-    "white_space_control": {
-      "type": "PATTERN",
-      "value": "[-+]"
-    },
     "_white_space": {
       "type": "PATTERN",
       "value": "\\s+"
@@ -405,6 +367,14 @@
           {
             "type": "SYMBOL",
             "name": "_white_space"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "filter_operator"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "equal_operator"
           },
           {
             "type": "SYMBOL",
@@ -445,6 +415,14 @@
           {
             "type": "SYMBOL",
             "name": "_white_space"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "filter_operator"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "equal_operator"
           },
           {
             "type": "SYMBOL",
@@ -500,7 +478,15 @@
     },
     "operator": {
       "type": "PATTERN",
-      "value": "[^\\w_{#%}'\"]+"
+      "value": "[^\\w_{#%}'\"|=\\s]+"
+    },
+    "filter_operator": {
+      "type": "STRING",
+      "value": "|"
+    },
+    "equal_operator": {
+      "type": "STRING",
+      "value": "="
     },
     "string": {
       "type": "PATTERN",

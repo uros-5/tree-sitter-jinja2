@@ -7,7 +7,7 @@
   <groupId>io.github.tree-sitter</groupId>
   <artifactId>jtreesitter-jinja2</artifactId>
   <name>JTreeSitter Jinja2</name>
-  <version>0.0.14</version>
+  <version>0.0.16</version>
   <description>Jinja2 grammar for tree-sitter</description>
   <url>https://github.com/uros-5/tree-sitter-jinja2</url>
   <licenses>

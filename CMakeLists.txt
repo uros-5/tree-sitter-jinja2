@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-jinja2
-        VERSION "0.0.14"
+        VERSION "0.0.16"
         DESCRIPTION "Jinja2 grammar for tree-sitter"
         HOMEPAGE_URL "https://github.com/uros-5/tree-sitter-jinja2"
         LANGUAGES C)
